@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\pages",
+    "\\src\\pages\\login",
+    "\\src\\pages\\registrar",
+    "\\src\\providers"
+  ],
+  "SelectedNode": "\\src\\pages\\registrar\\registrar.ts",
+  "PreviewInSolutionExplorer": false
+}
