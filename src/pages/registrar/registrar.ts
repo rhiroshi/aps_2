@@ -23,7 +23,7 @@ export class Registrar {
 				}).catch(erro => {
 					console.log('Erro de registro: ', erro);
 					this.toast.create({
-						message: 'Erro ao registrar, tente novamente',
+						message: 'Erro ao registrar, ' + erro.message,
 						position: 'top',
 						duration: 3000
 					}).present();

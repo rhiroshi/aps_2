@@ -4,10 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\login",
-    "\\src\\pages\\registrar",
+    "\\src\\pages\\registro-ocorrencia",
     "\\src\\providers"
   ],
-  "SelectedNode": "\\src\\pages\\registrar\\registrar.ts",
+  "SelectedNode": "\\src\\pages\\registro-ocorrencia\\registro-ocorrencia.html",
   "PreviewInSolutionExplorer": false
 }
