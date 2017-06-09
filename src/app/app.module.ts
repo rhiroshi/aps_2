@@ -6,9 +6,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { FirebaseProvider } from '../providers/firebase-provider';
 import { MyApp } from './app.component';
 
+import { ProgressBar } from '../components/progress-bar/progress-bar';
+
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    ProgressBar
   ],
   imports: [
     BrowserModule,
