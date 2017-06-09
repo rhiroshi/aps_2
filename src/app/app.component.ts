@@ -15,7 +15,7 @@ export class MyApp {
               //verifica se está logado e define a pagina
 		  firebase.auth().onAuthStateChanged(user => {
 			  console.log(user);
-			  this.rootPage = (user) ? 'Teste' : 'Login';
+			  this.rootPage = (user) ? 'Tabs' : 'Login';
 		  });
       statusBar.styleDefault();
       splashScreen.hide();

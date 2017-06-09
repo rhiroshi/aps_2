@@ -5,8 +5,10 @@
     "\\src\\app",
     "\\src\\pages",
     "\\src\\pages\\registro-ocorrencia",
-    "\\src\\providers"
+    "\\src\\pages\\tabs",
+    "\\src\\providers",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\pages\\registro-ocorrencia\\registro-ocorrencia.html",
+  "SelectedNode": "\\src\\pages\\registro-ocorrencia\\registro-ocorrencia.scss",
   "PreviewInSolutionExplorer": false
 }

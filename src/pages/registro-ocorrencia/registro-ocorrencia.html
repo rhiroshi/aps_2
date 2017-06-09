@@ -18,10 +18,26 @@
       </ion-item>
 
       <ion-item>
-        
+        <ion-label floating>Endereço</ion-label>
+        <ion-input type="text" [(ngModel)]="paciente.endereco"></ion-input>
       </ion-item>
 
+        <ion-item>
+          <ion-label>Doença</ion-label>
+          <ion-select [(ngModel)]="paciente.doenca">
+            <ion-option *ngFor="let doenca of doencas" [value]="doenca">{{doenca}}</ion-option>
+          </ion-select>
+          <button id="addDoenca" ion-button color="transparente" item-right icon-only (click)="novaDoenca()">
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </ion-item>
+
+
     </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <button ion-button (click)="registrar()">Registrar</button>
   </ion-card>
 
 </ion-content>
