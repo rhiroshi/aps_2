@@ -7,21 +7,40 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
+  <ion-item-group id="cadastro">
 
-  <ion-card>
-
-    <ion-card-content>
       <ion-item>
         <ion-label floating>Nome do paciente</ion-label>
         <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
       </ion-item>
 
+
+
       <ion-item>
-        
+        <ion-label floating>Endereço</ion-label>
+        <ion-input type="text" [(ngModel)]="paciente.endereco"></ion-input>
       </ion-item>
 
-    </ion-card-content>
+        <ion-item #teste>
+          <ion-label>Doença</ion-label>
+          <ion-select [(ngModel)]="paciente.doenca">
+            <ion-option *ngFor="let doenca of doencas" [value]="doenca">{{doenca}}</ion-option>
+          </ion-select>
+          <button id="addDoenca" ion-button color="transparente" item-right icon-only (click)="novaDoenca()">
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </ion-item>
+
+  </ion-item-group>
+
+
+  <button ion-button icon-only (click)="mostrarCadastro()">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+
+  <ion-card>
+    <button ion-button (click)="registrar()">Registrar</button>
   </ion-card>
 
 </ion-content>
