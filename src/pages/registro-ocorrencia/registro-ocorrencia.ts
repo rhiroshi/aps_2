@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, ModalController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase-provider';
 
@@ -8,7 +8,11 @@ import { FirebaseProvider } from '../../providers/firebase-provider';
   templateUrl: 'registro-ocorrencia.html',
 })
 export class RegistroOcorrencia {
+	@ViewChild('teste')
+	teste: ElementRef;
 
+
+public mostraCadastro = true;
 public doencas = ['Selecione'];
 public paciente = {
 	nome: '',
@@ -22,8 +26,16 @@ public paciente = {
 		this.firebase.database().ref("/doencas/").on('child_added', (snap) => {
 			this.doencas.push(snap.val());
 		});
-
+		
   }
+      
+	ngAfterViewInit() {
+		console.log(this.teste);
+	}
+
+	public mostrarCadastro() {
+		this.mostraCadastro = !this.mostraCadastro;
+	}
 
 	public novaDoenca() {
 		let modal = this.modal.create('CadastroDoenca');
