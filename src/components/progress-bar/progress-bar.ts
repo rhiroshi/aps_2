@@ -12,9 +12,10 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressBar {
   @Input('progress') progress;
+  @Input('tipo') tipo;
 
   constructor() {
-    
+
   }
 
 }
