@@ -18,6 +18,10 @@ export class Login {
 
   }
 
+  logando() {
+    
+  }
+
   logar() {
 	  if ((this.login.email != '') && (this.login.senha != '')) {
 		  this.firebase.auth().signInWithEmailAndPassword(this.login.email, this.login.senha)

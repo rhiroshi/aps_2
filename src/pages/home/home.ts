@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {FirebaseProvider} from '../../providers/firebase-provider';
+
 /**
  * Generated class for the Home page.
  *
@@ -14,11 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Home {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Home');
+  sair() {
+    this.firebase.auth().signOut().then(() => this.navCtrl.setRoot('Login'));
   }
 
 }
