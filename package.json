@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "ionic-hello-world",
   "version": "0.0.0",
   "author": "Ionic Framework",
@@ -54,8 +53,7 @@
   "description": "aps_2: An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-camera": {}
-=======
+      "cordova-plugin-camera": {},
     "name": "ionic-hello-world",
     "version": "0.0.0",
     "author": "Ionic Framework",
@@ -126,6 +124,7 @@
         "platforms": [
             "android"
         ]
->>>>>>> 4e1b60b1e06ed7a6b9f3d0db2f9aff26f03f1eef
     }
+}
+}
 }
