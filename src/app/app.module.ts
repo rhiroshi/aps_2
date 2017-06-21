@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { FirebaseProvider } from '../providers/firebase-provider';
 import { MyApp } from './app.component';
 
+import { DBMeter } from '@ionic-native/db-meter';
+
+//import { ProgressbarModule } from 'ngx-bootstrap';
+
 @NgModule({
   declarations: [
     MyApp
@@ -13,13 +17,15 @@ import { MyApp } from './app.component';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
+    //ProgressbarModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp
   ],
   providers: [
-        FirebaseProvider,
+    DBMeter,
+    FirebaseProvider,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
