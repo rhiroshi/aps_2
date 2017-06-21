@@ -8,15 +8,16 @@ import { FirebaseProvider } from '../providers/firebase-provider';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = 'Login';
+  rootPage:any = 'Tabs';
 
   constructor(firebase: FirebaseProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-	  platform.ready().then(() => {
-              //verifica se está logado e define a pagina
+        	  
+	        //verifica se está logado e define a pagina
 		  firebase.auth().onAuthStateChanged(user => {
 			  console.log(user);
 			  this.rootPage = (user) ? 'Tabs' : 'Login';
 		  });
+	  platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });

@@ -1,0 +1,30 @@
+﻿<ion-header>
+
+  <expandable-header id="expandableHeader" [scrollArea]="expandable" headerHeight="90">
+    <ion-searchbar placeholder="Buscar por nome" (ionInput)="buscar()" [(ngModel)]="pesquisaNome"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar por endereço" (ionInput)="buscar()" [(ngModel)]="pesquisaEndereco"></ion-searchbar>
+  </expandable-header>
+
+  <ion-toolbar>
+    <ion-title>Ocorrencias</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="novaOcorrencia()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fullscreen #expandable>
+  <ion-list>
+    <button ion-item *ngFor="let ocorrencia of ocorrencias" (click)="abrirOcorrencia(ocorrencia)">
+      <h2>{{ocorrencia.nome}}</h2>
+      <p>{{ocorrencia.endereco}}</p>
+      <p item-right>></p>
+    </button>
+
+    </ion-list>
+
+</ion-content>

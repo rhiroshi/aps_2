@@ -4,13 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\cadastro-doenca",
-    "\\src\\pages\\perfil",
+    "\\src\\pages\\mapa-ocorrencias",
+    "\\src\\pages\\ocorrencias",
     "\\src\\pages\\registro-ocorrencia",
-    "\\src\\pages\\tabs",
-    "\\src\\providers",
-    "\\src\\theme"
+    "\\src\\providers"
   ],
-  "SelectedNode": "\\src\\pages\\cadastro-doenca\\cadastro-doenca.html",
+  "SelectedNode": "\\src\\pages\\home",
   "PreviewInSolutionExplorer": false
 }
