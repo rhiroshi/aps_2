@@ -1,12 +1,54 @@
 ﻿<ion-header>
 
-  <ion-navbar>
-    <ion-title>Apresentação</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>Trabalho 2</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content fullscreen>
+
+  <h2>Equipe composta por</h2>
+  <ion-grid>
+        <ion-row>
+              <ion-col>
+                    <ion-card block item-left>
+                            <img src="https://firebasestorage.googleapis.com/v0/b/aps-2-20006.appspot.com/o/IMG_20170622_163311804.jpg?alt=media&token=be514a83-cd46-4005-8930-dc674805c2a0" />
+                            <ion-card-content>
+                                  <h2>Rafael Shintani</h2>
+                            </ion-card-content>
+                    </ion-card>
+              </ion-col>
+              <ion-col>
+                    <ion-card item-right>
+                            <img src="https://firebasestorage.googleapis.com/v0/b/aps-2-20006.appspot.com/o/11896231_881704155238742_2880995681137488903_n.jpg?alt=media&token=81c4e4cd-e012-4566-b7f9-e373d8cb7dfc" />
+                            <ion-card-content>
+                                   <h2>Bruno Batista</h2>
+                            </ion-card-content>
+                    </ion-card>
+              </ion-col>
+              <ion-col>
+                      <ion-card item-right>
+                              <img src="https://firebasestorage.googleapis.com/v0/b/aps-2-20006.appspot.com/o/WhatsApp%20Image%202017-06-22%20at%2017.26.54.jpeg?alt=media&token=1ee603bd-d36d-453c-a6f5-def9a56cd66a" />
+                              <ion-card-content>
+                                      <h2>Diego Vilela</h2>
+                              </ion-card-content>
+                      </ion-card>
+              </ion-col>
+        </ion-row>
+  </ion-grid>
+
+    <p>Plugins utilizados:</p>
+    <p> -Câmera</p>
+    <p> -GPS</p>
+    <p> -Facebook login</p>
+    <p> -Decibelimetro</p>
+    <p> -Firebase</p>
 
 </ion-content>

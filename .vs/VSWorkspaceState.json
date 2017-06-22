@@ -4,12 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\mapa-ocorrencias",
     "\\src\\pages\\modal-set-coord",
     "\\src\\pages\\ocorrencias",
     "\\src\\pages\\registro-ocorrencia",
     "\\src\\providers"
   ],
-  "SelectedNode": "\\src\\pages\\mapa-ocorrencias\\mapa-ocorrencias.ts",
+  "SelectedNode": "\\src\\providers\\dados-fb.ts",
   "PreviewInSolutionExplorer": false
 }
