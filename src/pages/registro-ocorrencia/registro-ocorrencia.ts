@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, ModalController, AlertController, ViewController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase-provider';
+declare var google: any;
 
 @IonicPage()
 @Component({
@@ -8,16 +9,18 @@ import { FirebaseProvider } from '../../providers/firebase-provider';
   templateUrl: 'registro-ocorrencia.html',
 })
 export class RegistroOcorrencia {
-      
-public mostraCadastro = true;
-public doencas = [];
-public paciente = {
-            id : null,
-		nome: '',
-		doenca: '',
-		endereco: ''
-	};
-public id;
+
+      public geocoder = new google.maps.Geocoder;
+      public mostraCadastro = true;
+      public doencas = [];
+      public paciente = {
+                  id : null,
+		      nome: '',
+		      doenca: '',
+		      endereco: '',
+                  coord: ''
+	      };
+      public id;
 	public refPacientes = "/pacientes/";
 
 
@@ -32,6 +35,18 @@ public id;
 			this.doencas.splice(this.doencas.indexOf(snap.val().nome), 1);
 		});
   }
+      
+	public setarCoord() {
+		let modal = this.modal.create('ModalSetCoord');
+		modal.onDidDismiss(dado => {
+			if (dado) {
+				console.log('fecho modal', dado);
+				this.paciente.endereco = dado.data.endereco;
+				this.paciente.coord = dado.data.coord;
+			}
+		});
+		modal.present();
+	}
 
 	public excluir() {
 		this.firebase.database().ref('pacientes/' + this.paciente.id.toString()).remove().then(res => {
@@ -84,8 +99,7 @@ public id;
 	public registrar() {
 		let toast = this.toast.create({
 			duration: 1500,
-			position: 'top',
-
+			position: 'top'
 		});
 		if (!this.paciente.nome || !this.paciente.endereco || !this.paciente.doenca) {
 			toast.setMessage('Todos os campos devem estar preenchidos!');
