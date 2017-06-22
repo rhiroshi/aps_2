@@ -1,0 +1,35 @@
+
+<ion-header>
+    	
+	<ion-toolbar>
+
+		<ion-buttons start>
+
+			<button ion-button icon-only (click)="capturar()">
+				<ion-title left >Denúncias</ion-title>
+				<ion-icon name="camera"></ion-icon>
+
+			</button>
+
+		</ion-buttons>
+
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item>
+		<img [src]="imagem" *ngIf="imagem">
+	</ion-item>
+		
+	<ion-item>
+        <ion-label floating>Descrição denúncia</ion-label>
+        <ion-input type="text" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+    	<button ion-button full (click)="registrar()">Registrar</button>
+    </ion-item>
+
+
+</ion-content>

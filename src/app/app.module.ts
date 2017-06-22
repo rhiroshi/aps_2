@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FirebaseProvider } from '../providers/firebase-provider';
 import { MyApp } from './app.component';
-
+import { Camera } from '@ionic-native/camera';
 import { DBMeter } from '@ionic-native/db-meter';
 import {Facebook} from '@ionic-native/facebook';
 import {HttpModule} from '@angular/http';
@@ -19,7 +19,6 @@ import {HttpModule} from '@angular/http';
     HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
-    //ProgressbarModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,6 +27,7 @@ import {HttpModule} from '@angular/http';
   providers: [
     Facebook,
     DBMeter,
+    Camera,
     FirebaseProvider,
     StatusBar,
     SplashScreen,

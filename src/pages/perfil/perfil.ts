@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase-provider';
 
-/**
- * Generated class for the Perfil page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-perfil',
@@ -14,11 +9,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Perfil {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	public usuario = {
+		nome: 'Teste',
+		img: 'http://piq.codeus.net/static/media/userpics/piq_139461_400x400.png',
+		endereco: 'Rua teste',
+            email: 'email@teste.com'
+	};
+     
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Perfil');
-  }
+	constructor(public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
+
+      }
+	logout() {
+		this.firebase.auth().signOut();
+	}
 
 }
