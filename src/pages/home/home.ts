@@ -16,11 +16,17 @@ import {FirebaseProvider} from '../../providers/firebase-provider';
 })
 export class Home {
 
+  public user = {};
+
   constructor(public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.firebase.auth().onAuthStateChanged(user => {
+      console.log(user);
+      this.user = user;
+    });
   }
 
   sair() {
-    this.firebase.auth().signOut().then(() => this.navCtrl.setRoot('Login'));
-  }
+   this.firebase.auth().signOut().then(() => this.navCtrl.setRoot('Login'));
+ }
 
 }
