@@ -2,6 +2,10 @@
 import { IonicPage, NavController, NavParams, AlertController, ToastController, ModalController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase-provider';
 
+import {Facebook} from '@ionic-native/facebook';
+import {Http} from '@angular/http';
+import {auth} from 'firebase';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -14,8 +18,28 @@ export class Login {
 		senha: ''
 	};
 
-	constructor(public modal: ModalController, public toast: ToastController, public alert: AlertController, public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
+  public user = {};
 
+	constructor(public fb: Facebook, public http: Http, public modal: ModalController, public toast: ToastController, public alert: AlertController, public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
+
+  }
+
+  loginFacebook() {
+    let permissions = ['public_profile', 'email'];
+    this.fb.login(permissions).then(res => {
+      this.user['token'] = res.authResponse.accessToken;
+      this.user['id'] = res.authResponse.userID;
+      this.user['status'] = 'coonected';
+      const tokenCredential = auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+
+      this.firebase.auth().signInWithCredential(tokenCredential).then(usuario => {
+        console.log('usuario logado: ', usuario);
+      });
+    });
+  }
+
+  logando() {
+    
   }
 
   logar() {
