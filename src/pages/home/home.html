@@ -8,11 +8,17 @@
 
   <ion-navbar>
     <ion-title>home</ion-title>
+    <ion-buttons end>
+
+      <button ion-button (click)='sair()'><ion-icon name='close'></ion-icon></button>
+
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div>{{user.displayName}}</div>
+  <div>{{user.email}}</div>
 </ion-content>

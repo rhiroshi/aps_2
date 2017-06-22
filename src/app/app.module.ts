@@ -7,7 +7,8 @@ import { FirebaseProvider } from '../providers/firebase-provider';
 import { MyApp } from './app.component';
 
 import { DBMeter } from '@ionic-native/db-meter';
-
+import {Facebook} from '@ionic-native/facebook';
+import {HttpModule} from '@angular/http';
 //import { ProgressbarModule } from 'ngx-bootstrap';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DBMeter } from '@ionic-native/db-meter';
     MyApp
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
     //ProgressbarModule.forRoot()
@@ -24,6 +26,7 @@ import { DBMeter } from '@ionic-native/db-meter';
     MyApp
   ],
   providers: [
+    Facebook,
     DBMeter,
     FirebaseProvider,
     StatusBar,
