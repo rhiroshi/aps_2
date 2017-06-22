@@ -43,6 +43,7 @@ export class CadDenuncia {
 			(imageData) => this.imagem = 'data:image/jpeg;base64,' + imageData,
 			(err) => console.log(err)
 		);
+		this.minhaPosicao();
 	}
 
 	
