@@ -2,22 +2,27 @@
 <ion-header>
     	
 	<ion-toolbar>
-
+		<ion-title >Denúncias</ion-title>
 		<ion-buttons start>
 
-			<button ion-button icon-only (click)="capturar()">
-				<ion-title left >Denúncias</ion-title>
-				<ion-icon name="camera"></ion-icon>
+				<button ion-button icon-only (click)="capturar()">
+					
+					<ion-icon name="camera"></ion-icon>
 
-			</button>
+				</button>
 
-		</ion-buttons>
-
+			</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
+	<ion-item>
+    	<button ion-button full (click)="capturar()">
+    		<ion-icon name="camera"></ion-icon>
+    	</button>
+    </ion-item>
+
 	<ion-item>
 		<img [src]="imagem" *ngIf="imagem">
 	</ion-item>
@@ -27,9 +32,25 @@
         <ion-input type="text" ></ion-input>
     </ion-item>
 
-    <ion-item>
-    	<button ion-button full (click)="registrar()">Registrar</button>
+	<ion-item>
+    	<button ion-button full (click)="minhaPosicao()">
+    		<ion-icon name="pin"></ion-icon>
+    	</button>
     </ion-item>
 
+   <p>Localização </p>
+    <ion-card>    	
+        {{ endereco }}
+    </ion-card>
+
+    <ion-item>
+		<div id="divMap"> 
+			<div id="mapaView"></div>
+		</div>
+	</ion-item>
+
+	<ion-item>
+    	<button ion-button full (click)="registrar()">Registrar</button>
+    </ion-item>
 
 </ion-content>
