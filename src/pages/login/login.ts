@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController, ToastController, 
 import { FirebaseProvider } from '../../providers/firebase-provider';
 
 import {Facebook} from '@ionic-native/facebook';
-import {Http} from '@angular/http';
 import {auth} from 'firebase';
 
 @IonicPage()
@@ -20,7 +19,7 @@ export class Login {
 
   public user = {};
 
-	constructor(public fb: Facebook, public http: Http, public modal: ModalController, public toast: ToastController, public alert: AlertController, public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
+	constructor(public fb: Facebook, public modal: ModalController, public toast: ToastController, public alert: AlertController, public firebase: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
@@ -39,7 +38,7 @@ export class Login {
   }
 
   logando() {
-    
+
   }
 
   logar() {
