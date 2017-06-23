@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
-<<<<<<< HEAD
+﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-=======
-import { IonicPage } from 'ionic-angular';
->>>>>>> 4e1b60b1e06ed7a6b9f3d0db2f9aff26f03f1eef
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @IonicPage()
@@ -27,14 +23,9 @@ export class CadDenuncia {
 			(err) => console.log(err)
 		);
 	}
-
-<<<<<<< HEAD
-
-=======
+      
 	registrar() {
 
 	}
   
->>>>>>> 4e1b60b1e06ed7a6b9f3d0db2f9aff26f03f1eef
-
 }
