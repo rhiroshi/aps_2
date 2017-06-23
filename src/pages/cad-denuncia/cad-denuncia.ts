@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, AlertController } from 'ionic-angular';
+import { IonicPage, AlertController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
+import { FirebaseProvider } from '../../providers/firebase-provider'; 
 declare var google: any;
 
 @IonicPage()
@@ -10,6 +11,15 @@ declare var google: any;
   templateUrl: 'cad-denuncia.html',
 })
 export class CadDenuncia {
+	//strutura firebase
+	public denuncia = {
+		fotoPath: '',
+		descricao: '',
+     	latitude: '',
+     	longitude: ''
+	}
+
+
 	//referente a localizacao
 	public mapa;
 	public latitude;
@@ -28,8 +38,10 @@ export class CadDenuncia {
 		encodingType: this.camera.EncodingType.JPEG,
 		mediaType: this.camera.MediaType.PICTURE
 	};
-	public imagem;		
- 	constructor(public camera: Camera, public geolocation: Geolocation, public alertCtrl: AlertController) {
+
+	public imagem;	
+
+ 	constructor(public camera: Camera, public geolocation: Geolocation, public alertCtrl: AlertController, public toast: ToastController, public firebase: FirebaseProvider) {
  		this.alertCtrl = alertCtrl;
  		this.localizar();
 
@@ -49,7 +61,30 @@ export class CadDenuncia {
 	
 
 	registrar() {
-		//tem que criar a rotina ainda
+		this.denuncia.latitude = this.latitude;
+		this.denuncia.longitude = this.longitude;
+		this.denuncia.fotoPath = this.imagem;
+
+		let toast = this.toast.create({
+			duration: 1500,
+			position: 'top',
+
+		});
+		if (!this.denuncia.fotoPath || !this.denuncia.descricao || !this.denuncia.latitude || !this.denuncia.longitude) {
+			toast.setMessage('Todos os campos devem estar preenchidos!');
+			toast.present();
+		} else {
+			let id = this.firebase.database().ref("/denuncia/").push().key;
+			this.firebase.database().ref("/denuncia/" + id).set(this.denuncia).then(res=> {
+                        console.log("inserido")
+				toast.setMessage("Registrado com sucesso!");
+				toast.present();
+			}).catch(erro => {
+				toast.setMessage(erro.message);
+				toast.present();
+			});
+		}
+	  console.log("Registrar: ", this.denuncia);
 	}
 
 
