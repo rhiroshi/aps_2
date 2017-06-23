@@ -88,4 +88,6 @@
         <variable name="APP_ID" value="1333357213446714" />
         <variable name="APP_NAME" value="br.utfpr.aps2" />
     </plugin>
+    <plugin name="cordova-plugin-dbmeter" spec="~1.1.2" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
 </widget>
