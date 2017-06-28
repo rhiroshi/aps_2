@@ -3,12 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\components",
+    "\\src\\components\\expandable-header",
+    "\\src\\components\\progress-bar",
     "\\src\\pages",
-    "\\src\\pages\\modal-set-coord",
-    "\\src\\pages\\ocorrencias",
-    "\\src\\pages\\registro-ocorrencia",
+    "\\src\\pages\\decibelimetro",
+    "\\src\\pages\\mapa-ocorrencias",
     "\\src\\providers"
   ],
-  "SelectedNode": "\\src\\providers\\dados-fb.ts",
+  "SelectedNode": "\\src\\components\\progress-bar\\progress-bar.html",
   "PreviewInSolutionExplorer": false
 }

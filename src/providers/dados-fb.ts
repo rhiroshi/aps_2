@@ -8,7 +8,6 @@ export class DadosFB {
 	public ocorrencias = [];
 
 	constructor(public firebase: FirebaseProvider) {
-		this.iniciarListeners();
   }
 
   iniciarListeners() {

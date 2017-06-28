@@ -1,0 +1,85 @@
+﻿<!--
+  Generated template for the Decibelimetro page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Decibelímetro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item *ngIf="avg > 0">
+    <div class="badge">
+      Média:
+      <ion-badge [color]="type">{{avg | number:'1.1-1'}} dB</ion-badge>
+    </div>
+  </ion-item>
+
+  <progress-bar [(progress)]="dynamic"></progress-bar>
+
+  <ion-buttons center class="botao">
+    <button ion-button round (click)='executaDcbm()' [color]="botao.cor">
+      {{botao.nome}}
+    </button>
+</ion-buttons>
+
+  <ion-card>
+    <ion-card-header text-wrap>
+      PERDA DE AUDIÇÃO INDUZIDA POR RUÍDO (BARULHO)
+    </ion-card-header>
+    <ion-card-content text-justify>
+      A exposição contínua a níveis de ruído superiores a 50 decibels pode
+      causar deficiência auditiva em algumas pessoas.
+      Há variação considerá vel de indivíduo para indivíduo relativa à
+      susceptibilidade ao barulho. Entretanto, padrões têm sido estabelecidos
+      que indicam o quanto de som, em média, uma pessoa pode tolerar em
+      relação ao prejuízo de sua saúde.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-wrap>
+      Níveis toleráveis de poluição sonora
+    </ion-card-header>
+    <ion-card-content text-justify>
+      Os índices de poluição sonora aceitáveis estão determinados de acordo
+      com a zona e horário segundo as normas da ABNT (n.º 10.151). Conforme as
+      zonas os níveis de decibéis máximos permitidos nos períodos diurnos e
+      noturnos são os seguintes:
+    </ion-card-content>
+  </ion-card>
+
+  <div class="row header">
+    <div class="col">Área</div>
+    <div class="col">Período</div>
+    <div class="col">Decibels (dB)</div>
+  </div>
+  <div class="row" >
+    <div class="col">Zona de Hospitais</div>
+    <div class="col">Diurno / Noturno</div>
+    <div class="col">45 / 40</div>
+  </div>
+  <div class="row" >
+    <div class="col">Zona Residencial Urbana</div>
+    <div class="col">Diurno / Noturno</div>
+    <div class="col">55 / 50</div>
+  </div>
+  <div class="row" >
+    <div class="col">Centro da cidade (negócios, comércio, administração)</div>
+    <div class="col">Diurno / Noturno</div>
+    <div class="col">65 / 60</div>
+  </div>
+  <div class="row" >
+    <div class="col">Área Predominante Industrial</div>
+    <div class="col">Diurno / Noturno</div>
+    <div class="col">70 / 65</div>
+  </div>
+
+</ion-content>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ProgressBar } from './progress-bar';
 
@@ -7,7 +7,7 @@ import { ProgressBar } from './progress-bar';
     ProgressBar,
   ],
   imports: [
-    IonicPageModule.forChild(ProgressBar),
+    IonicPageModule.forChild(ProgressBar)
   ],
   exports: [
     ProgressBar
