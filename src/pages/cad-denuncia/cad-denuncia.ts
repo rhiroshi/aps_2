@@ -57,9 +57,6 @@ export class CadDenuncia {
 		);
 		this.minhaPosicao();
 	}
-
-	
-
 	registrar() {
 		this.denuncia.latitude = this.latitude;
 		this.denuncia.longitude = this.longitude;
@@ -173,5 +170,4 @@ export class CadDenuncia {
 		});
 	}
   
-
 }

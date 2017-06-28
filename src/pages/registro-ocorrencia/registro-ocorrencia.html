@@ -8,39 +8,36 @@
 
 
 <ion-content >
-  <ion-item-group id="cadastro">
-
       <ion-item>
         <ion-label floating>Nome do paciente</ion-label>
         <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
       </ion-item>
-
-
-
       <ion-item>
         <ion-label floating>Endereço</ion-label>
-        <ion-input type="text" [(ngModel)]="paciente.endereco"></ion-input>
+        <ion-input disabled type="text" [(ngModel)]="paciente.endereco"></ion-input>
+        <button id="botaoIcone" ion-button color="transparente" item-right icon-only (click)="setarCoord()">
+            <ion-icon name="pin"></ion-icon>
+        </button>
       </ion-item>
-
-        <ion-item #teste>
+        <ion-item>
           <ion-label>Doença</ion-label>
           <ion-select [(ngModel)]="paciente.doenca">
             <ion-option *ngFor="let doenca of doencas" [value]="doenca">{{doenca}}</ion-option>
           </ion-select>
-          <button id="addDoenca" ion-button color="transparente" item-right icon-only (click)="novaDoenca()">
+          <button id="botaoIcone" ion-button color="transparente" item-right icon-only (click)="novaDoenca()">
             <ion-icon name="add-circle"></ion-icon>
           </button>
         </ion-item>
 
-  </ion-item-group>
+
+  <ion-item id="botoes" padding >
+    <button item-right ion-button (click)="excluir()" color="danger" *ngIf="paciente.id">Excluir</button>
+    <button item-right ion-button (click)="registrar()">Salvar</button>
+    <button item-right ion-button color="danger" (click)="fechar()">Cancelar</button>
+  </ion-item>
 
 
-  <button ion-button icon-only (click)="mostrarCadastro()">
-    <ion-icon name="add-circle"></ion-icon>
-  </button>
 
-  <ion-card>
-    <button ion-button (click)="registrar()">Registrar</button>
-  </ion-card>
+
 
 </ion-content>

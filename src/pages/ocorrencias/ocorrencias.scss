@@ -1,0 +1,29 @@
+﻿page-ocorrencias {
+
+  expandable-header {
+    background-color: rgba(227, 124, 50, 0.5);
+  }
+
+  .toolbar-background {
+    background-color: #e37c32;
+  }
+
+  .searchbar {
+    padding: 0;
+    margin-bottom: 2px;
+    opacity: 0.85;
+  }
+
+  .searchbar:first-child {
+    margin-top: -17px;
+  }
+
+  .searchbar-has-focus {
+    opacity: 1
+  }
+
+  #expandableHeader .searchbar {
+    font-size: 0.9em;
+    transition: 0.2s linear;
+  }
+}
