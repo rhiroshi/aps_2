@@ -11,7 +11,6 @@ import { Camera } from '@ionic-native/camera';
 import { DBMeter } from '@ionic-native/db-meter';
 import {Facebook} from '@ionic-native/facebook';
 import {HttpModule} from '@angular/http';
-//import { ProgressbarModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
